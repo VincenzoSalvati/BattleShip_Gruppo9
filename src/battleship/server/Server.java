@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-@SuppressWarnings("EnhancedSwitchMigration")
+@SuppressWarnings("DuplicatedCode")
 public class Server extends Thread {
     private final static int PORT = 33333;
     private final ArrayList<Players> listPlayers = new ArrayList<>();

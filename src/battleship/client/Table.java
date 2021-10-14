@@ -1,5 +1,6 @@
 package battleship.client;
 
+@SuppressWarnings("DuplicatedCode")
 public class Table {
     public static final int ROWS = 10;
     public static final int COLS = 10;

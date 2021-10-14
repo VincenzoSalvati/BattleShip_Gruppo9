@@ -2,7 +2,6 @@ package battleship.server;
 
 import java.net.InetAddress;
 
-@SuppressWarnings("ClassCanBeRecord")
 public class User {
     private final String username;
     private final InetAddress addr;

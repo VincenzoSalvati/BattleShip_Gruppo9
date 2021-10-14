@@ -6,7 +6,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
-@SuppressWarnings({"EnhancedSwitchMigration", "DuplicatedCode"})
+@SuppressWarnings("DuplicatedCode")
 public class Client extends JFrame {
     private final static int PORT = 33333;
     static InetAddress addr;
@@ -81,7 +81,7 @@ public class Client extends JFrame {
             JButton Login_Button = frame.getLogin_Button();
             JLabel Username_Label = frame.getUsername_Label();
             JTextField Username_TextField = frame.getUsername_TextField();
-            JTextField Coloumn_TextField = frame.getColumn_TextField();
+            JTextField Column_TextField = frame.getColumn_TextField();
             JTextField Row_TextField = frame.getY_TextField();
             JButton Up_Button = frame.getUp_Button();
             JButton Right_Button = frame.getRight_Button();
@@ -110,7 +110,7 @@ public class Client extends JFrame {
                 // Set GUI components
                 Logout_Button.setEnabled(false);
                 Login_Button.setEnabled(true);
-                Coloumn_TextField.setEnabled(false);
+                Column_TextField.setEnabled(false);
                 Row_TextField.setEnabled(false);
                 Ok_Button.setEnabled(false);
                 Up_Button.setEnabled(false);
@@ -132,7 +132,7 @@ public class Client extends JFrame {
             Login_Button.setVisible(false);
             Username_TextField.setVisible(false);
             Username_Label.setText("Username: " + frame.getUsername());
-            Coloumn_TextField.setEnabled(false);
+            Column_TextField.setEnabled(false);
             Row_TextField.setEnabled(false);
             Ok_Button.setEnabled(false);
             Up_Button.setEnabled(false);
@@ -148,7 +148,7 @@ public class Client extends JFrame {
             Username_TextField.setEnabled(false);
             frame.setTitle(username + " (Connected)");
             // Receive messages from Server
-            new ReceiveMessageFromServer(socket, frame, Logout_Button, Coloumn_TextField, Row_TextField, Ok_Button,
+            new ReceiveMessageFromServer(socket, frame, Logout_Button, Column_TextField, Row_TextField, Ok_Button,
                     Up_Button, Right_Button, Down_Button, Left_Button, Table_TextArea, Aircraft_Carrier_Button, Battleship_Button, Destroyer_Button,
                     Submarine_Button, Boat_Button, Username_TextField, player, username);
         } catch (Exception e) {
@@ -262,7 +262,7 @@ public class Client extends JFrame {
             try {
                 // Check range of coordinates
                 if ((c.length() == 1) && (r >= 0 && r <= 9)) {
-                    // Set GUI compontents
+                    // Set GUI components
                     Left_Button.setEnabled(true);
                     Up_Button.setEnabled(true);
                     Right_Button.setEnabled(true);

@@ -6,7 +6,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
-@SuppressWarnings({"EnhancedSwitchMigration", "DuplicatedCode"})
+@SuppressWarnings("DuplicatedCode")
 public class Enemy extends JFrame {
     private final String title;
     private final DatagramSocket socket;

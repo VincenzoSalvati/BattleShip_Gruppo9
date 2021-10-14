@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
-@SuppressWarnings({"EnhancedSwitchMigration", "DuplicatedCode"})
+@SuppressWarnings("DuplicatedCode")
 public class ReceiveMessageFromServer extends Thread {
     private final DatagramSocket socket;
     private final Frame frame;
