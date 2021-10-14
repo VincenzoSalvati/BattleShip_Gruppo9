@@ -176,7 +176,7 @@ public class ReceiveMessageFromServer extends Thread {
                                 disable_Submarine_Button = true;
                                 disable_Boat_Button = true;
                                 disable_Username_TextField = true;
-                                if (enemy!=null){
+                                if (enemy != null) {
                                     enemy.getColumn_TextField().setEnabled(false);
                                     enemy.getRow_TextField().setEnabled(false);
                                     enemy.getAttack_Button().setEnabled(false);
