@@ -199,7 +199,7 @@ public class Client extends JFrame {
 
     // Initialized frame components
     private void initComponents() {
-        this.setBounds(100, 100, 1300, 600);
+        this.setBounds(100, 100, 1500, 650);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(Attack_Panel);
         // Set GUI components
