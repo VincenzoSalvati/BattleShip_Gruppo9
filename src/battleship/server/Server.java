@@ -154,39 +154,6 @@ public class Server extends Thread {
                                 clients.remove(i);
                             }
                             break;
-                        // Send coordinates of the attack
-                        case ("CRD"):
-                            String coordinatesToSend = "ATK" + msgText;
-                            for (Players p : listPlayers) {
-                                if (p.getAddr_player1() != null) {
-                                    if (((p.getAddr_player1().equals(packet.getAddress())) && (p.getPORT_player1() == packet.getPort()))) {
-                                        DatagramPacket packets = new DatagramPacket(coordinatesToSend.getBytes(), coordinatesToSend.getBytes().length, p.getAddr_player2(), p.getPORT_player2());
-                                        socket.send(packets);
-                                        break;
-                                    } else if (p.getAddr_player2() != null)
-                                        if ((((p.getAddr_player2().equals(packet.getAddress()))) && (p.getPORT_player2() == packet.getPort()))) {
-                                            DatagramPacket packets = new DatagramPacket(coordinatesToSend.getBytes(), coordinatesToSend.getBytes().length, p.getAddr_player1(), p.getPORT_player1());
-                                            socket.send(packets);
-                                            break;
-                                        }
-                                }
-                            }
-                            break;
-                        // Send table to the challenger
-                        case ("TAB"):
-                            String tableToSend = "UPD" + msgText;
-                            for (Players p : listPlayers) {
-                                if (((p.getAddr_player1().equals(packet.getAddress())) && (p.getPORT_player1() == packet.getPort()))) {
-                                    DatagramPacket packets = new DatagramPacket(tableToSend.getBytes(), tableToSend.getBytes().length, p.getAddr_player2(), p.getPORT_player2());
-                                    socket.send(packets);
-                                } else if (p.getAddr_player2() != null)
-                                    if ((((p.getAddr_player2().equals(packet.getAddress()))) && (p.getPORT_player2() == packet.getPort()))) {
-                                        DatagramPacket packets = new DatagramPacket(tableToSend.getBytes(), tableToSend.getBytes().length, p.getAddr_player1(), p.getPORT_player1());
-                                        socket.send(packets);
-                                        break;
-                                    }
-                            }
-                            break;
                         // Start fight
                         case ("FNS"):
                             Players challenger = null;
@@ -220,6 +187,39 @@ public class Server extends Thread {
                                     packetToSend = new DatagramPacket(messageToSend.getBytes(), messageToSend.getBytes().length, challenger.getAddr_player2(), challenger.getPORT_player2());
                                     socket.send(packetToSend);
                                 }
+                            break;
+                        // Send coordinates of the attack
+                        case ("CRD"):
+                            String coordinatesToSend = "ATK" + msgText;
+                            for (Players p : listPlayers) {
+                                if (p.getAddr_player1() != null) {
+                                    if (((p.getAddr_player1().equals(packet.getAddress())) && (p.getPORT_player1() == packet.getPort()))) {
+                                        DatagramPacket packets = new DatagramPacket(coordinatesToSend.getBytes(), coordinatesToSend.getBytes().length, p.getAddr_player2(), p.getPORT_player2());
+                                        socket.send(packets);
+                                        break;
+                                    } else if (p.getAddr_player2() != null)
+                                        if ((((p.getAddr_player2().equals(packet.getAddress()))) && (p.getPORT_player2() == packet.getPort()))) {
+                                            DatagramPacket packets = new DatagramPacket(coordinatesToSend.getBytes(), coordinatesToSend.getBytes().length, p.getAddr_player1(), p.getPORT_player1());
+                                            socket.send(packets);
+                                            break;
+                                        }
+                                }
+                            }
+                            break;
+                        // Send table to the challenger
+                        case ("TAB"):
+                            String tableToSend = "UPD" + msgText;
+                            for (Players p : listPlayers) {
+                                if (((p.getAddr_player1().equals(packet.getAddress())) && (p.getPORT_player1() == packet.getPort()))) {
+                                    DatagramPacket packets = new DatagramPacket(tableToSend.getBytes(), tableToSend.getBytes().length, p.getAddr_player2(), p.getPORT_player2());
+                                    socket.send(packets);
+                                } else if (p.getAddr_player2() != null)
+                                    if ((((p.getAddr_player2().equals(packet.getAddress()))) && (p.getPORT_player2() == packet.getPort()))) {
+                                        DatagramPacket packets = new DatagramPacket(tableToSend.getBytes(), tableToSend.getBytes().length, p.getAddr_player1(), p.getPORT_player1());
+                                        socket.send(packets);
+                                        break;
+                                    }
+                            }
                             break;
                         // Communicate the winner
                         case ("LOS"):
